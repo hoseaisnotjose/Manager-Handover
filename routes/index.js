@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router();
+var router = require('express').Router();
 const passport = require('passport');
 
 /* GET home page. */
@@ -27,15 +27,5 @@ router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/users');
 });
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router;
