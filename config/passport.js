@@ -1,4 +1,4 @@
-/const passport = require('passport');
+const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../models/user');
 
@@ -27,7 +27,9 @@ passport.use(new GoogleStrategy({
                 return cb(null, newUser);
             });
          }
-      });
+      
+    });
+
 }));
 
 passport.serializeUser(function(user, done) {
