@@ -1,8 +1,12 @@
 <%- include('../partials/header') %>
 
+<h1><%= report.text%></h1>
+<form action="/reports/<%= report._id %>?_method=DELETE" method="POST">
 
-<%= report.text%>
+<input type="submit" value="Delete Report">
+</form>
 <% if(report.comments.length) { %>
+    <h3>All Comments</h3>
     <ul>
         <% report.comments.forEach((c, i)=>{ %>
             <li>

@@ -55,5 +55,7 @@ function addReport(req, res, next) {
 }
 
 function delReport(req, res, next) {
-
+    Report.findByIdAndDelete(req.params.id, function(err, report) {
+        res.redirect('/reports')
+    })
 }
