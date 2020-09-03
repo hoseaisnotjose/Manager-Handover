@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+
+<%= report.text%>
+<% if(report.comments.length) { %>
+    <ul>
+        <% report.comments.forEach((c, i)=>{ %>
+            <li>
+                <%=c.text%>, by: <%= commentUsers[i]%>
+            </li>
+            
+        <% }) %>
+
+    </ul>
+<% } else { %>
+    <p>No comments on this report</p>
+<% } %>
+
+
+<h1>Add comment below</h1>
+<form action="/reports/<%=report._id%>/comments" method="POST">
+<input type="text" name="text">
+<input type="submit" value="Submit Comment">
+</form>
+
+</body>
+</html>

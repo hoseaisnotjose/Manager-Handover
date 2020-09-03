@@ -7,7 +7,7 @@ const passport = require('passport');
 //   res.render('index', { title: 'Express' });
 // });
 router.get('/', function(req,res) {
-  res.redirect('/users');
+  res.redirect('/reports');
 })
 
 // Google OAuth login route
@@ -20,15 +20,15 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/users',
-    failureRedirect : '/users'
+    successRedirect : '/reports',
+    failureRedirect : '/reports'
   }
 ));
 
 // OAuth logout route
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/users');
+  res.redirect('/reports');
 });
 
 module.exports = router;

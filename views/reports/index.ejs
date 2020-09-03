@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<% if(reports.length) { %>
+    <ul>
+        <% reports.forEach(r=>{ %>
+            <li>
+                <a href="/reports/<%= r._id %>">
+                    <%= r.text %> 
+                </a>
+
+            </li>
+        <% }) %>
+
+    </ul>
+
+<% } else { %>
+    <p> No reports to display</p>
+<% } %>
+
+<a href="/reports/new">New Report</a>
+</body>
+</html>
