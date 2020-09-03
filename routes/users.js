@@ -3,7 +3,7 @@ const router = express.Router();
 const usersCtrl = require('../controllers/users');
 
 // GET /users
-router.get('/users', usersCtrl.index);
+router.get('/', usersCtrl.index);
 
 // POST /reports
 router.post('/reports', isLoggedIn, usersCtrl.addReport);
@@ -17,8 +17,6 @@ function isLoggedIn(req, res, next) {
 }
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+
 
 module.exports = router;

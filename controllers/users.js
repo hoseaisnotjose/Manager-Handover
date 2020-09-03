@@ -7,16 +7,9 @@ module.exports = {
 };
 
 function index(req, res, next) {
-    console.log(req.query);
-    let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
-    // default to sorting by name
-    let sortKey = req.query.sort || 'name';
-    User.find(modelQuery)
-    .sort(sortKey).exec(function(err, users) {
-        if(err) return next(err);
-        // Passing search values, name & sortKey, for use in the EJS
-        res.render('users/index', {users, name: req.query.name, sortKey});
-    });
+    User.find({}, function(err, users) {
+        res.render('index', {user: req.user, users})
+    })
 }
 
 function addReport(req, res, next) {
@@ -27,5 +20,5 @@ function addReport(req, res, next) {
 }
 
 function delReport(req, res, next) {
-    
+
 }

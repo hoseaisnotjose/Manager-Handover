@@ -10,3 +10,7 @@ a {
 .brand-logo {
   margin-left: 15px;
 }
+
+.container {
+  padding: 30px;
+}
