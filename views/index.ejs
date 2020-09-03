@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title><%= Manager Handover %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1><%= Manager Handover %></h1>
+    <p>Welcome to <%= Manager Handover %></p>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="" class="brand-logo left">Manager Handover</a>
+          <ul class="right">
+            <li>
+              <% if (user) { %>
+              <a href="/logout"><i class="material-icons left">trending_flat</i>Logout</i></a>
+              <% } else { %>
+                <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+              <% } %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+<div class="container">
+  <form action="/users" method="GET">
+    <div class="input-field">
+      <input id="search" placeholder="search" value="<%= all %>" autocomplete="off">
+      <i class="material-icons">close</i>
+    </div>
+    <div class="col s2">
+      <p>
+        <label for="sort-date">
+          <input date="sort-date" type="number" id="sort-date" value="date" class="mm/dd"
+          <%= sortKey === 'date' ? 'checked' : '' %> >
+          <span>Sort by date</span>
+        </label>
+      </p>
+    </div>
+  </form>
+</div>
   </body>
 </html>

@@ -20,9 +20,12 @@ function index(req, res, next) {
 }
 
 function addReport(req, res, next) {
-
+    req.user.reports.push(req.body);
+    req.user.save(function(err) {
+        req.redirect('/users');
+    });
 }
 
 function delReport(req, res, next) {
-
+    
 }
