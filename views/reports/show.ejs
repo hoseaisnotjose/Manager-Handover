@@ -4,7 +4,7 @@
     Arrivals: <%= report.arrivals%>, 
     Departures: <%= report.departures%>
 </h2>
-<a href="/reports/<%= report._id %>/edit">EDIT POST</a>
+<a href="/reports/<%= report._id %>/edit">Edit Report</a>
 <form action="/reports/<%= report._id %>?_method=DELETE" method="POST">
 <input type="submit" value="Delete Report">
 </form>
