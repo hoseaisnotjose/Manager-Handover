@@ -28,6 +28,7 @@ Ice Box:
 -	Expand text area
 
 Links:
+
 https://manager-handover.herokuapp.com/
 
 https://trello.com/b/zReO8CLi/manager-handover
