@@ -1,5 +1,3 @@
-Read me:
-
 Manager Handover is a more progressive way to share, update and follow up on shift reports for hotel managers. This report is meant to provide real-time operational update and eliminate having to receive several emails rendering time-sensitive aspects of the job ineffective.
 
 Users are able to:
