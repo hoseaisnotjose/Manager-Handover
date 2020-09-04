@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+<h1><%= report.text%></h1>
+<h2>Occ: <%= report.occupancy%>, Arrivals: <%= report.arrivals%>, Departures: <%= report.departures%></h2>
+<form action="/reports/<%= report._id %>?_method=PUT" method="POST">
+  <input type="text" name="text" value="<%= report.text%>">
+  <input type="number" name="occupancy" value="<%= report.occupancy%>">
+  <input type="number" name="arrivals" value="<%= report.arrivals%>">
+  <input type="number" name="departures" value="<%= report.departures%>">
+  <input type="submit" value="UPDATE REPORT">
+</form>
+
+
+
+
+</body>
+</html>

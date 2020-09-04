@@ -1,31 +1,31 @@
 <%- include('../partials/header') %>
-
 <h1><%= report.text%></h1>
+<h2>Occ: <%= report.occupancy%>, 
+    Arrivals: <%= report.arrivals%>, 
+    Departures: <%= report.departures%>
+</h2>
+<a href="/reports/<%= report._id %>/edit">EDIT POST</a>
 <form action="/reports/<%= report._id %>?_method=DELETE" method="POST">
-
 <input type="submit" value="Delete Report">
 </form>
 <% if(report.comments.length) { %>
-    <h3>All Comments</h3>
+    <h6>Comments</h6>
     <ul>
         <% report.comments.forEach((c, i)=>{ %>
             <li>
                 <%=c.text%>, by: <%= commentUsers[i]%>
             </li>
-            
         <% }) %>
-
     </ul>
 <% } else { %>
     <p>No comments on this report</p>
 <% } %>
-
-
-<h1>Add comment below</h1>
+<h6>Add comment below</h6>
 <form action="/reports/<%=report._id%>/comments" method="POST">
 <input type="text" name="text">
 <input type="submit" value="Submit Comment">
 </form>
+
 
 </body>
 </html>

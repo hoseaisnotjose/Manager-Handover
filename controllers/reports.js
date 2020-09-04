@@ -6,7 +6,9 @@ module.exports = {
     delReport,
     newReport,
     show,
-    addComment
+    addComment,
+    edit,
+    update
 };
 
 function addComment(req, res, next) {
@@ -59,3 +61,15 @@ function delReport(req, res, next) {
         res.redirect('/reports')
     })
 }
+
+function edit(req, res, next){
+    Report.findById(req.params.id, function(err, report){
+      res.render('reports/edit',{report})
+    })
+  }
+
+  function update(req, res, next){
+    Report.findByIdAndUpdate(req.params.id, req.body, function(err, report){
+      res.redirect(`/reports/${req.params.id}`)
+    })
+  }

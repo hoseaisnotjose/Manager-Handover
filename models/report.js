@@ -10,6 +10,10 @@ const commentSchema = new mongoose.Schema({
 
 const reportSchema = new mongoose.Schema({
     text: String,
+    // description or details: datatype will be "string"
+    occupancy: Number,
+    arrivals: Number,
+    departures: Number,
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
