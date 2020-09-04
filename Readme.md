@@ -6,6 +6,15 @@ Users are able to:
 -	Create, delete and update a report (including arrivals, departures and occupancy)
 -	Leave comments
 
+Technologies Used: 
+-	Node.js
+-	Express
+-	MongoDb
+-	Mongoose
+-	CSS
+-	HTML
+-	Javascript
+
 Reflection:
 -	Deeper understanding of Express, MongoDb and Mongoose
 -	OAuth and Atlas and the relationship with .env
@@ -18,5 +27,7 @@ Ice Box:
 -	Ability to attach pictures
 -	Expand text area
 
-Link:
+Links:
 https://manager-handover.herokuapp.com/
+
+https://trello.com/b/zReO8CLi/manager-handover
